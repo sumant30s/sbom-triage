@@ -1,0 +1,9 @@
+﻿priority,component,version,vulnerability,severity,cvss,epss,kev,reason,component_ref,purl,aliases,review_notes
+P0,log4j-core,2.14.1,CVE-2021-44228,Critical,10.0,0.99999,True,CISA KEV lists known exploitation; urgently assess applicability and mitigations.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2021-44228; GHSA-jfh8-c2jp-5v3q,
+P0,log4j-core,2.14.1,CVE-2021-45046,Critical,9.0,0.99977,True,CISA KEV lists known exploitation; urgently assess applicability and mitigations.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2021-45046; GHSA-7rjr-3q55-vv33,
+P1,log4j-core,2.14.1,CVE-2021-45105,High,8.6,0.99999,False,EPSS >=10%; assess exposure and remediation promptly.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2021-45105; GHSA-p6xc-xr62-6r2g,
+P1,log4j-core,2.14.1,CVE-2021-44832,Medium,6.6,0.97906,False,EPSS >=10%; assess exposure and remediation promptly.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2021-44832; GHSA-8489-44mv-ggj8,
+P2,log4j-core,2.14.1,CVE-2026-34480,Medium,6.9,0.01046,False,EPSS >=1%; investigate applicability and plan remediation.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2026-34480; GHSA-3pxv-7cmr-fjr4,
+P3,log4j-core,2.14.1,CVE-2025-68161,Medium,6.3,0.00767,False,Below configured escalation thresholds; review and track.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2025-68161; GHSA-vc5p-v9hr-52mj,
+P3,log4j-core,2.14.1,CVE-2026-34477,Medium,6.3,0.0056,False,Below configured escalation thresholds; review and track.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2026-34477; GHSA-6hg6-v5c8-fphq,
+P3,log4j-core,2.14.1,CVE-2026-34479,Medium,6.9,0.00535,False,Below configured escalation thresholds; review and track.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2026-34479; GHSA-h383-gmxw-35v2,

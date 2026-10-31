@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-31T19:04:40.463253+00:00",
+  "mode": "demo",
+  "input_sha256": "dcc8762b99ca2a4b60df41e494fc22b2f8ce2b5254d206d4fd4fbe47ac724613",
+  "status": "partial",
+  "policy_version": "educational-v1",
+  "summary": {
+    "components": 5,
+    "queried": 4,
+    "skipped": 1,
+    "failed": 0,
+    "findings": 4,
+    "needs_review": 1
+  },
+  "sources": {
+    "demo": {
+      "notice": "All responses are synthetic teaching fixtures, NOT live intelligence.",
+      "fixture_version": "1",
+      "sample_epss_date": "2024-01-01"
+    }
+  },
+  "errors": [],
+  "components": [
+    {
+      "ref": "log4j",
+      "name": "log4j-core",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "issue": null,
+      "status": "matched",
+      "advisory_count": 1
+    },
+    {
+      "ref": "requests",
+      "name": "requests",
+      "version": "2.19.1",
+      "purl": "pkg:pypi/requests@2.19.1",
+      "issue": null,
+      "status": "matched",
+      "advisory_count": 2
+    },
+    {
+      "ref": "yaml",
+      "name": "PyYAML",
+      "version": "5.3.1",
+      "purl": "pkg:pypi/pyyaml@5.3.1",
+      "issue": null,
+      "status": "matched",
+      "advisory_count": 1
+    },
+    {
+      "ref": "example",
+      "name": "example-only-package",
+      "version": "1.0.0",
+      "purl": "pkg:npm/example-only-package@1.0.0",
+      "issue": null,
+      "status": "no_known_match",
+      "advisory_count": 0
+    },
+    {
+      "ref": "firmware",
+      "name": "example-device-firmware",
+      "version": "1.0",
+      "purl": null,
+      "issue": "Missing purl; package ecosystem cannot be inferred safely.",
+      "status": "skipped",
+      "advisory_count": 0
+    }
+  ],
+  "findings": [
+    {
+      "component_ref": "log4j",
+      "component": "log4j-core",
+      "version": "2.14.1",
+      "purl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "vulnerability": "CVE-2021-44228",
+      "aliases": [
+        "CVE-2021-44228",
+        "DEMO-LOG4J"
+      ],
+      "advisory_ids": [
+        "DEMO-LOG4J"
+      ],
+      "cves": [
+        "CVE-2021-44228"
+      ],
+      "summary": "Synthetic training advisory",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "cvss_evidence": [
+        {
+          "source": "DEMO-LOG4J",
+          "type": "CVSS_V3",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "score": 9.8
+        }
+      ],
+      "epss": 0.42,
+      "epss_by_cve": {
+        "CVE-2021-44228": {
+          "score": 0.42,
+          "percentile": 0.98,
+          "date": "2024-01-01"
+        }
+      },
+      "kev": true,
+      "kev_by_cve": {
+        "CVE-2021-44228": {
+          "cveID": "CVE-2021-44228",
+          "requiredAction": "Synthetic fixture: review vendor guidance."
+        }
+      },
+      "priority": "P0",
+      "reason": "CISA KEV lists known exploitation; urgently assess applicability and mitigations.",
+      "review_notes": [],
+      "affected_evidence": [
+        {
+          "source": "DEMO-LOG4J",
+          "packages": []
+        }
+      ],
+      "references": [],
+      "source_modified": {
+        "DEMO-LOG4J": "2024-01-01T00:00:00Z"
+      },
+      "reachability": "Not assessed",
+      "patient_safety_impact": "Not assessed"
+    },
+    {
+      "component_ref": "yaml",
+      "component": "PyYAML",
+      "version": "5.3.1",
+      "purl": "pkg:pypi/pyyaml@5.3.1",
+      "vulnerability": "CVE-2020-14343",
+      "aliases": [
+        "CVE-2020-14343",
+        "DEMO-YAML"
+      ],
+      "advisory_ids": [
+        "DEMO-YAML"
+      ],
+      "cves": [
+        "CVE-2020-14343"
+      ],
+      "summary": "Synthetic training advisory",
+      "cvss": 9.8,
+      "severity": "Critical",
+      "cvss_evidence": [
+        {
+          "source": "DEMO-YAML",
+          "type": "CVSS_V3",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "score": 9.8
+        }
+      ],
+      "epss": 0.005,
+      "epss_by_cve": {
+        "CVE-2020-14343": {
+          "score": 0.005,
+          "percentile": 0.5,
+          "date": "2024-01-01"
+        }
+      },
+      "kev": false,
+      "kev_by_cve": {},
+      "priority": "P1",
+      "reason": "Critical CVSS (>=9.0); assess exposure and remediation promptly.",
+      "review_notes": [],
+      "affected_evidence": [
+        {
+          "source": "DEMO-YAML",
+          "packages": []
+        }
+      ],
+      "references": [],
+      "source_modified": {
+        "DEMO-YAML": "2024-01-01T00:00:00Z"
+      },
+      "reachability": "Not assessed",
+      "patient_safety_impact": "Not assessed"
+    },
+    {
+      "component_ref": "requests",
+      "component": "requests",
+      "version": "2.19.1",
+      "purl": "pkg:pypi/requests@2.19.1",
+      "vulnerability": "CVE-2018-18074",
+      "aliases": [
+        "CVE-2018-18074",
+        "DEMO-REQUESTS-A",
+        "DEMO-REQUESTS-B"
+      ],
+      "advisory_ids": [
+        "DEMO-REQUESTS-A",
+        "DEMO-REQUESTS-B"
+      ],
+      "cves": [
+        "CVE-2018-18074"
+      ],
+      "summary": "Synthetic training advisory",
+      "cvss": 4.3,
+      "severity": "Medium",
+      "cvss_evidence": [
+        {
+          "source": "DEMO-REQUESTS-A",
+          "type": "CVSS_V3",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:N",
+          "score": 4.3
+        }
+      ],
+      "epss": 0.02,
+      "epss_by_cve": {
+        "CVE-2018-18074": {
+          "score": 0.02,
+          "percentile": 0.7,
+          "date": "2024-01-01"
+        }
+      },
+      "kev": false,
+      "kev_by_cve": {},
+      "priority": "P2",
+      "reason": "EPSS >=1%; investigate applicability and plan remediation.",
+      "review_notes": [],
+      "affected_evidence": [
+        {
+          "source": "DEMO-REQUESTS-A",
+          "packages": []
+        },
+        {
+          "source": "DEMO-REQUESTS-B",
+          "packages": []
+        }
+      ],
+      "references": [],
+      "source_modified": {
+        "DEMO-REQUESTS-A": "2024-01-01T00:00:00Z",
+        "DEMO-REQUESTS-B": "2024-01-01T00:00:00Z"
+      },
+      "reachability": "Not assessed",
+      "patient_safety_impact": "Not assessed"
+    },
+    {
+      "component_ref": "requests",
+      "component": "requests",
+      "version": "2.19.1",
+      "purl": "pkg:pypi/requests@2.19.1",
+      "vulnerability": "DEMO-NO-CVE",
+      "aliases": [
+        "DEMO-NO-CVE"
+      ],
+      "advisory_ids": [
+        "DEMO-NO-CVE"
+      ],
+      "cves": [],
+      "summary": "Training example with missing CVSS and CVE alias",
+      "cvss": null,
+      "severity": "Unknown",
+      "cvss_evidence": [],
+      "epss": null,
+      "epss_by_cve": {},
+      "kev": null,
+      "kev_by_cve": {},
+      "priority": "P2",
+      "reason": "Evidence is incomplete; manual review required before lowering priority.",
+      "review_notes": [
+        "No usable numeric CVSS vector from OSV.",
+        "No CVE alias; EPSS and KEV correlation unavailable."
+      ],
+      "affected_evidence": [
+        {
+          "source": "DEMO-NO-CVE",
+          "packages": []
+        }
+      ],
+      "references": [],
+      "source_modified": {
+        "DEMO-NO-CVE": "2024-01-01T00:00:00Z"
+      },
+      "reachability": "Not assessed",
+      "patient_safety_impact": "Not assessed"
+    }
+  ],
+  "limitations": [
+    "No known match is not evidence of absence of vulnerabilities.",
+    "Priority is an educational policy, not a clinical risk score or remediation SLA.",
+    "Reachability, exposure, VEX validity and patient-safety impact require human assessment.",
+    "CVSS is the highest supplied score, not a conversion between CVSS versions.",
+    "EPSS is the maximum among CVE aliases; per-CVE values and dates are retained."
+  ]
+}

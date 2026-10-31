@@ -1,0 +1,20 @@
+rules:
+  - id: no-runtime-eval
+    languages: [python]
+    message: Never evaluate SBOM or API-supplied text as Python code.
+    severity: ERROR
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: exec(...)
+  - id: no-disabled-tls-verification
+    languages: [python]
+    message: Keep TLS certificate validation enabled.
+    severity: ERROR
+    pattern-either:
+      - pattern: requests.$METHOD(..., verify=False, ...)
+      - pattern: $SESSION.request(..., verify=False, ...)
+  - id: no-shell-execution
+    languages: [python]
+    message: Avoid shell execution with untrusted inventory fields.
+    severity: ERROR
+    pattern: subprocess.$METHOD(..., shell=True, ...)

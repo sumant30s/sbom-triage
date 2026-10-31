@@ -1,0 +1,5 @@
+﻿priority,component,version,vulnerability,severity,cvss,epss,kev,reason,component_ref,purl,aliases,review_notes
+P0,log4j-core,2.14.1,CVE-2021-44228,Critical,9.8,0.42,True,CISA KEV lists known exploitation; urgently assess applicability and mitigations.,log4j,pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1,CVE-2021-44228; DEMO-LOG4J,
+P1,PyYAML,5.3.1,CVE-2020-14343,Critical,9.8,0.005,False,Critical CVSS (>=9.0); assess exposure and remediation promptly.,yaml,pkg:pypi/pyyaml@5.3.1,CVE-2020-14343; DEMO-YAML,
+P2,requests,2.19.1,CVE-2018-18074,Medium,4.3,0.02,False,EPSS >=1%; investigate applicability and plan remediation.,requests,pkg:pypi/requests@2.19.1,CVE-2018-18074; DEMO-REQUESTS-A; DEMO-REQUESTS-B,
+P2,requests,2.19.1,DEMO-NO-CVE,Unknown,,,,Evidence is incomplete; manual review required before lowering priority.,requests,pkg:pypi/requests@2.19.1,DEMO-NO-CVE,No usable numeric CVSS vector from OSV.; No CVE alias; EPSS and KEV correlation unavailable.
