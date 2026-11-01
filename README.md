@@ -124,7 +124,9 @@ Partial coverage takes precedence over the priority gate. A complete scan can st
 .\.venv\Scripts\python.exe -m bandit -q -r src app.py
 ```
 
-Tests mock external APIs; they do not depend on live vulnerability scores. CI runs them on Linux and Windows with Python 3.11/3.12. A separate security job runs Bandit, Semgrep and Trivy. GitHub Actions workflow execution must be verified in the actual repository; local test success is not proof that hosted CI has run.
+Tests mock external APIs; they do not depend on live vulnerability scores. CI runs them on Linux and Windows with Python 3.11/3.12, with Ruff and Bandit checks. Separate jobs run Semgrep and Trivy. [The verified hosted run](https://github.com/sumant30s/sbom-triage/actions/runs/41271276645) passed all six jobs.
+
+Trivy scans the pinned `requirements-tested.txt` snapshot under the recognized `requirements.txt` filename. A coverage check requires every pinned name/version to appear in its JSON report, so an empty scan cannot silently pass. The report is retained as a workflow artifact for seven days. This checks the recorded snapshot, not every newly resolved matrix environment; refresh the snapshot after dependency updates.
 
 ## Learn and explain this project
 
