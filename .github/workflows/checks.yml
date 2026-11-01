@@ -42,6 +42,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - name: Expose tested dependency snapshot to Trivy's pip analyzer
+        run: cp requirements-tested.txt requirements.txt
       - name: Trivy dependency and secret scan
         uses: aquasecurity/trivy-action@v0.36.0
         with:
@@ -51,3 +53,40 @@ jobs:
           severity: HIGH,CRITICAL
           exit-code: '1'
           hide-progress: true
+          format: json
+          output: trivy-results.json
+          list-all-pkgs: true
+      - name: Verify dependency scan coverage
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          normalize = lambda name: re.sub(r"[-_.]+", "-", name).lower()
+          expected = set()
+          for line in Path("requirements-tested.txt").read_text().splitlines():
+              if "==" in line and not line.startswith("#"):
+                  name, version = line.split("==", 1)
+                  expected.add((normalize(name), version))
+          report = json.loads(Path("trivy-results.json").read_text())
+          scanned = {
+              (normalize(package["Name"]), package["Version"])
+              for result in report.get("Results", [])
+              if result.get("Type") == "pip"
+              for package in result.get("Packages", [])
+          }
+          missing = expected - scanned
+          if not expected or missing:
+              raise SystemExit(f"Incomplete dependency scan; missing packages: {sorted(missing)}")
+          print(f"Verified Trivy coverage for all {len(expected)} pinned Python dependencies.")
+          PY
+      - name: Save dependency scan evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-results
+          path: trivy-results.json
+          if-no-files-found: error
+          retention-days: 7
